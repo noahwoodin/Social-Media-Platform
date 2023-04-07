@@ -1,0 +1,11 @@
+# Dockerfile-user1-flask
+FROM python:3.9
+
+COPY app/requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app .
+
+CMD ["python", "flask_app.py"]
+
+EXPOSE 5000

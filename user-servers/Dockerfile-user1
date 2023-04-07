@@ -1,0 +1,11 @@
+# Dockerfile-user1-flask
+FROM python:3.9
+
+COPY user-servers/requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD ["python", "user-servers/user1.py"]
+
+EXPOSE 5001
